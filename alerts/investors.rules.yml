@@ -1,0 +1,11 @@
+groups:
+- name: investments.rules
+  rules:
+  - alert: InvestorsMilestone
+    expr: platform_total_investors > 1000000
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Investors milestone reached: > 1,000,000 total investors"
+      description: "The gauge 'platform_total_investors' exceeded 1,000,000 for 5 minutes. Replace 'platform_total_investors' with your actual metric name if different. Receiver: RECEIVER_PLACEHOLDER"
